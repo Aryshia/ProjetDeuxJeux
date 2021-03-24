@@ -1,12 +1,13 @@
 package application;
 
+import morpion.Partie;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
 public class MenuPrincipal extends JDialog {
     private JPanel contentPane;
-    private JButton buttonOK;
     private JButton buttonCancel;
     private JButton pierreFeuilleCiseauxButton;
     private JButton morpionButton;
@@ -14,7 +15,7 @@ public class MenuPrincipal extends JDialog {
     public MenuPrincipal() {
         setContentPane(contentPane);
         setModal(true);
-        getRootPane().setDefaultButton(buttonOK);
+        getRootPane().setDefaultButton(morpionButton);
 
         buttonCancel.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -54,7 +55,8 @@ public class MenuPrincipal extends JDialog {
     }
 
     private void lancerMorpion() {
-        new morpion.Partie();
+        dispose();
+        new Partie();
     }
 
     private void lancerPFC() {
@@ -67,5 +69,4 @@ public class MenuPrincipal extends JDialog {
         dialog.setVisible(true);
         System.exit(0);
     }
-    
 }

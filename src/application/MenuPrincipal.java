@@ -1,6 +1,6 @@
 package application;
 
-import morpion.Partie;
+import morpion.UIMorpion;
 
 import javax.swing.*;
 import java.awt.*;
@@ -55,15 +55,14 @@ public class MenuPrincipal extends JDialog {
     }
 
     private void lancerMorpion() {
-        dispose();
-        new Partie();
+        new UIMorpion().ouvrir();
     }
 
     private void lancerPFC() {
-        new pierrefeuilleciseaux.Partie();
+        //
     }
 
-    public static void main(String[] args) {
+    public void ouvrir() {
         MenuPrincipal dialog = new MenuPrincipal();
         dialog.pack();
         dialog.setVisible(true);
